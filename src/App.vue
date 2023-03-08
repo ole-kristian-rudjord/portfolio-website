@@ -1,32 +1,61 @@
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
+import { createDOMCompilerError } from '@vue/compiler-dom';
+import { onMounted } from 'vue';
 import PageSection from './components/PageSection.vue';
+import PageTitle from './components/PageTitle.vue';
+import ParagraphComponent from './components/ParagraphComponent.vue';
+
+onMounted(() => {
+  const cursorInner = document.getElementById('cursor-inner');
+  const cursorOuter = document.getElementById('cursor-outer');
+
+  let mouseX = 0;
+  let mouseY = 0;
+  let xp = 0;
+  let yp = 0;
+
+  window.onmousemove = (e) => {
+    cursorInner.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+
+    mouseX = e.clientX - 10;
+    mouseY = e.clientY - 10;
+  };
+
+  setInterval(function () {
+    xp += (mouseX - xp) / 6;
+    yp += (mouseY - yp) / 6;
+    cursorOuter.style.transform =
+      'translateX(' + (xp - 18) + 'px) translateY(' + (yp - 14) + 'px)';
+  }, 5);
+});
 </script>
 
 <template>
-  <!-- <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" /> -->
-  <PageSection></PageSection>
+  <PageSection color="#1191d6">
+    <PageTitle
+      color="#1191d6"
+      smallText="Hi, my name is"
+      mainText="Ole Kristian Rudjord"
+    ></PageTitle>
+    <ParagraphComponent
+      mainText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Est reprehenderit
+      minus ad nostrum qui recusandae dolor. Ex pariatur velit distinctio sunt
+      tempore cupiditate dicta similique possimus eius! Beatae, accusantium
+      cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Deleniti temporibus debitis maiores voluptates! Voluptates, et quod illum,
+      quidem alias in libero reprehenderit beatae culpa sunt vero, ducimus
+      tempore quaerat delectus."
+    ></ParagraphComponent>
+  </PageSection>
+  <PageSection>
+    <PageTitle mainText="Projects"></PageTitle>
+  </PageSection>
+  <PageSection>
+    <PageTitle mainText="Education"></PageTitle>
+  </PageSection>
+  <PageSection>
+    <PageTitle mainText="Work"></PageTitle>
+  </PageSection>
 </template>
 
-<style scoped>
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-} */
-</style>
+<style scoped lang="sass"></style>
