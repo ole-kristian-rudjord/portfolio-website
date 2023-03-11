@@ -3,6 +3,8 @@ import { onMounted } from 'vue';
 import PageSection from './components/PageSection.vue';
 import PageTitle from './components/PageTitle.vue';
 import NavBar from './components/NavBar.vue';
+import MainGallery from './components/MainGallery.vue';
+import DiamondShape from './components/DiamondShape.vue';
 
 const NavBarLinks = [
   {
@@ -92,7 +94,9 @@ onMounted(() => {
       </p>
       <NavBar :links="NavBarLinks"></NavBar>
     </div>
-    <div class="page-div-right"></div>
+    <div class="page-div-right">
+      <MainGallery></MainGallery>
+    </div>
   </PageSection>
   <PageSection>
     <PageTitle mainText="Projects"></PageTitle>

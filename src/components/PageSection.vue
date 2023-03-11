@@ -23,9 +23,7 @@ defineProps({
 
 <template>
   <section :style="{ minHeight: state.sectionHeight + 'px' }">
-    <!-- <div> -->
     <slot></slot>
-    <!-- </div> -->
   </section>
 </template>
 
@@ -34,10 +32,4 @@ defineProps({
 
 section
   padding: $base-spacing
-
-  // div
-  //   display: flex
-  //   flex-direction: row
-  //   gap: $base-spacing
-  //   height: 100%
 </style>
