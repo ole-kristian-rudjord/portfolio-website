@@ -19,10 +19,12 @@ defineProps({
 </template>
 
 <style scoped lang="sass">
+  @import "../assets/sass/variables"
+
 h1
   position: relative
   width: min-content
-  margin-bottom: 4rem
+  margin-bottom: $base-spacing
   white-space: nowrap
   color: rgb(215, 215, 215)
 

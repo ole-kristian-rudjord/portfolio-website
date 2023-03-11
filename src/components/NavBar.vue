@@ -22,22 +22,29 @@ const props = defineProps({
 </template>
 
 <style scoped lang="sass">
+  @import "../assets/sass/variables"
+
 $transition-time: 250ms
-$base-spacing: 12px
+$NavBar-spacing: 12px
 $large1-spacing: 18px
 $large2-spacing: 24px
 $large3-spacing: 36px
 $large4-spacing: 48px
 
 nav
+  position: relative
+  top: $base-spacing
+  margin-top: auto
+  margin-bottom: $base-spacing
+
   ul
     display: flex
-    gap: calc(($large1-spacing + $base-spacing) * 2)
+    gap: calc(($large1-spacing + $NavBar-spacing) * 2)
     justify-content: center
     align-content: center
     list-style: none
     width: min-content
-    padding: calc($base-spacing * 6.5) calc($base-spacing * 4)
+    padding: calc($NavBar-spacing * 6.5) calc($NavBar-spacing * 4)
 
     li
       position: relative
@@ -45,7 +52,7 @@ nav
       &:nth-of-type(odd)
         a
           transform: translate(-50%, -50%) rotate(-45deg)
-          margin-top: calc(($large1-spacing + $base-spacing) * -1)
+          margin-top: calc(($large1-spacing + $NavBar-spacing) * -1)
 
           &:hover
             transform: translate(-50%, -50%) rotate(-45deg) scale(1.15)
@@ -61,7 +68,7 @@ nav
       &:nth-of-type(even)
         a
           transform: translate(-50%, -50%) rotate(45deg)
-          margin-top: calc($large1-spacing + $base-spacing)
+          margin-top: calc($large1-spacing + $NavBar-spacing)
 
           &:hover
             transform: translate(-50%, -50%) rotate(45deg) scale(1.15)
@@ -86,7 +93,7 @@ nav
         align-content: center
         height: calc($large3-spacing * 2)
         width: calc($large3-spacing * 2)
-        border-radius: $base-spacing
+        border-radius: $NavBar-spacing
         color: rgb(215 215 215)
         background-color: #145577
         text-decoration: none
@@ -94,7 +101,7 @@ nav
         transition: transform $transition-time ease, filter $transition-time ease
 
         &:hover
-          filter: drop-shadow(0 0 $base-spacing rgba(0, 0, 0, 0.3))
+          filter: drop-shadow(0 0 $NavBar-spacing rgba(0, 0, 0, 0.3))
 
           div
             height: calc($large4-spacing * 3)
@@ -112,8 +119,8 @@ nav
         left: 50%
         height: 0
         width: calc($large4-spacing * 2 - 4px)
-        padding: $base-spacing 0
-        border-radius: $base-spacing
+        padding: $NavBar-spacing 0
+        border-radius: $NavBar-spacing
         color: transparent
         z-index: -1
         pointer-events: none

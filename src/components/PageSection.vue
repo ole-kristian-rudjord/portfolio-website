@@ -10,6 +10,10 @@ function setSectionHeight() {
 
 onMounted(() => {
   setSectionHeight();
+
+  window.addEventListener('resize', () => {
+    setSectionHeight();
+  });
 });
 
 defineProps({
@@ -18,20 +22,22 @@ defineProps({
 </script>
 
 <template>
-  <section :style="{ height: state.sectionHeight + 'px' }">
-    <div>
-      <slot></slot>
-    </div>
+  <section :style="{ minHeight: state.sectionHeight + 'px' }">
+    <!-- <div> -->
+    <slot></slot>
+    <!-- </div> -->
   </section>
 </template>
 
 <style scoped lang="sass">
-section
-  padding: 4rem
+  @import "../assets/sass/variables"
 
-  div
-    display: flex
-    flex-direction: row
-    gap: 4rem
-    height: 100%
+section
+  padding: $base-spacing
+
+  // div
+  //   display: flex
+  //   flex-direction: row
+  //   gap: $base-spacing
+  //   height: 100%
 </style>
