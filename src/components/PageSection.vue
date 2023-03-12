@@ -1,28 +1,34 @@
 <script setup>
-import { reactive, onMounted } from 'vue';
+// import { reactive, onMounted } from 'vue';
 
-const state = reactive({ sectionHeight: 0 });
+import { onMounted } from 'vue';
 
-function setSectionHeight() {
-  state.sectionHeight = window.innerHeight;
-  console.log(state.sectionHeight);
-}
+// const state = reactive({ sectionHeight: 0 });
 
-onMounted(() => {
-  setSectionHeight();
+// function setSectionHeight() {
+//   state.sectionHeight = window.innerHeight;
+//   console.log(state.sectionHeight);
+// }
 
-  window.addEventListener('resize', () => {
-    setSectionHeight();
-  });
+// onMounted(() => {
+//   setSectionHeight();
+
+//   window.addEventListener('resize', () => {
+//     setSectionHeight();
+//   });
+// });
+
+const props = defineProps({
+  sectionHeight: String,
 });
-
-defineProps({
-  color: String,
+onMounted(() => {
+  console.log(props.sectionHeight);
 });
 </script>
 
 <template>
-  <section :style="{ minHeight: state.sectionHeight + 'px' }">
+  <!-- <section :style="{ minHeight: state.sectionHeight + 'px' }"> -->
+  <section :style="{ minHeight: `${props.sectionHeight}` }">
     <slot></slot>
   </section>
 </template>
