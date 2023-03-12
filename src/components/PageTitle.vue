@@ -46,7 +46,7 @@ h1
     height: 2rem
     width: calc( 100% + 0.5rem)
     border-radius: 2px
-    background-color: v-bind(color)
+    background-color: $primary-color
     opacity: 0.5
     z-index: -1
 </style>

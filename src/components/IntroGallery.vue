@@ -71,12 +71,11 @@ $gallery-diamond-width: 8rem
   width: 100%
   max-width: $gallery-width
   margin: auto
-  // outline: 3px dotted red
 
   > div
     position: absolute
     opacity: 0.4
-    transition: 333ms ease
+    transition: 350ms ease
 
   #image-0
     width: $gallery-diamond-width

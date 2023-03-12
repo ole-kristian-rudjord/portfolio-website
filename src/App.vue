@@ -3,6 +3,7 @@ import { onMounted, reactive } from 'vue';
 import PageSection from './components/PageSection.vue';
 import PageTitle from './components/PageTitle.vue';
 import IntroSection from './components/IntroSection.vue';
+import DottedBackground from './components/DottedBackground.vue';
 
 const state = reactive({ sectionHeight: '' });
 
@@ -17,6 +18,8 @@ onMounted(() => {
   window.addEventListener('resize', () => {
     setSectionHeight();
   });
+
+  document.documentElement.style.setProperty('--highlight-color', '#1191d6');
 
   /* const cursorInner = document.getElementById('cursor-inner');
   const cursorOuter = document.getElementById('cursor-outer');
@@ -39,6 +42,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <DottedBackground></DottedBackground>
   <IntroSection :sectionHeight="state.sectionHeight"></IntroSection>
   <PageSection :sectionHeight="state.sectionHeight">
     <PageTitle mainText="Projects"></PageTitle>
@@ -63,30 +67,6 @@ onMounted(() => {
   </PageSection>
 </template>
 
-<!-- <style scoped lang="sass">
-  @import "./assets/sass/variables"
-
-#section-1
-  display: flex
-  flex-direction: row
-  gap: $base-spacing
-
-  .page-div-left, .page-div-right
-    display: flex
-    flex-direction: column
-    width: 100%
-
-  .page-div-left
-    width: min-content
-
-  @media only screen and (max-width: 1024px)
-    flex-direction: column
-
-    .page-div-left, .page-div-right
-      width: 100%
-
-    nav
-      margin-left: auto
-      margin-right: auto
-      transform: scale(0.8)
-</style> -->
+<style lang="sass">
+@import "./assets/sass/variables"
+</style>
