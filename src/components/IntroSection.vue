@@ -91,10 +91,12 @@ section
   .page-div-left, .page-div-right
     display: flex
     flex-direction: column
-    width: 100%
 
   .page-div-left
     width: min-content
+
+  .page-div-right
+    width: 100%
 
   @media only screen and (max-width: 1024px)
     flex-direction: column
