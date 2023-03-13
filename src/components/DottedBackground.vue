@@ -17,6 +17,6 @@ div
   background-size: 2rem 2rem
   background-position: 100% 100%
   background-attachment: fixed
-  opacity: 0.2
+  opacity: 0.15
   z-index: -999
 </style>

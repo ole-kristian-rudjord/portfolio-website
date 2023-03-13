@@ -2,7 +2,7 @@
 import PageSection from './PageSection.vue';
 import PageTitle from './PageTitle.vue';
 import NavBar from './NavBar.vue';
-import IntroGallery2 from './IntroGallery2.vue';
+import IntroGallery from './IntroGallery.vue';
 
 const props = defineProps({ sectionHeight: String });
 
@@ -75,7 +75,7 @@ const NavBarLinks = [
       <NavBar :links="NavBarLinks"></NavBar>
     </div>
     <div class="page-div-right">
-      <IntroGallery2></IntroGallery2>
+      <IntroGallery></IntroGallery>
     </div>
   </PageSection>
 </template>
