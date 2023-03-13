@@ -23,9 +23,9 @@ defineProps({
 
 h1
   position: relative
-  width: min-content
+  // width: min-content
   margin-bottom: $base-spacing
-  white-space: nowrap
+  // white-space: nowrap
   color: rgb(215, 215, 215)
 
   span

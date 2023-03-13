@@ -2,7 +2,7 @@
 import PageSection from './PageSection.vue';
 import PageTitle from './PageTitle.vue';
 import NavBar from './NavBar.vue';
-import IntroGallery from './IntroGallery.vue';
+import IntroGallery2 from './IntroGallery2.vue';
 
 const props = defineProps({ sectionHeight: String });
 
@@ -58,24 +58,24 @@ const NavBarLinks = [
         tech!
       </p>
       <p>
-        To further develop my skills, I love working on projects outside of
-        school. Amongst them is a website about gaming-mice (very nerdy stuff, I
-        know) that I started in the beginning of 2022 to learn the basics of
+        To further develop my skills, I love working on personal projects.
+        Amongst them is a website about gaming-mice (very nerdy stuff, I know)
+        that I created in the beginning of 2022 to learn the basics of
         JavaScript. This eventually turned into
         <a href="https://www.eloshapes.com/">EloShapes.com</a>, a full-fledged
-        website with more than <span class="nowrap">70 000</span> monthly
+        website with more than <span class="nowrap"><b>75 000</b></span> monthly
         visits.
       </p>
       <p>
-        Outside of studies and web-related projects, I love playing video-games.
-        My all time favorites include Pokemon Platinum, Destiny, and TitanFall
-        2. Another hobby of mine includes, as you might have guessed,
-        gaming-mice. I also like running and working out.
+        Outside of studies and projects, I love playing video-games. My all time
+        favorites include Pokemon Platinum, Destiny, and TitanFall 2. Another
+        hobby of mine includes, as you might have guessed, gaming-mice. I also
+        like running and working out.
       </p>
       <NavBar :links="NavBarLinks"></NavBar>
     </div>
     <div class="page-div-right">
-      <IntroGallery :height="props.sectionHeight"></IntroGallery>
+      <IntroGallery2></IntroGallery2>
     </div>
   </PageSection>
 </template>
@@ -86,17 +86,20 @@ const NavBarLinks = [
 section
   display: flex
   flex-direction: row
+  justify-content: space-between
   gap: $base-spacing
 
   .page-div-left, .page-div-right
     display: flex
     flex-direction: column
+    width: 50%
 
   .page-div-left
     width: min-content
+    margin: 0
 
-  .page-div-right
-    width: 100%
+  nav
+    margin-top: auto
 
   @media only screen and (max-width: 1024px)
     flex-direction: column
@@ -105,7 +108,5 @@ section
       width: 100%
 
     nav
-      margin-left: auto
-      margin-right: auto
-      transform: scale(0.8)
+      display: none
 </style>

@@ -1,6 +1,4 @@
 <script setup>
-import { onMounted } from 'vue';
-
 const props = defineProps({
   links: Array,
 });
@@ -33,9 +31,6 @@ $large4-spacing: 48px
 
 nav
   position: relative
-  top: $base-spacing
-  margin-top: auto
-  margin-bottom: $base-spacing
 
   ul
     display: flex

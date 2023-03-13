@@ -1,16 +1,14 @@
 <script setup>
 const props = defineProps({
-  backgroundImageURL: String,
+  type: String,
+  content: String,
 });
 </script>
 
 <template>
   <div class="sized-div">
     <div class="shape">
-      <div
-        class="content"
-        :style="{ backgroundImage: `url(${props.backgroundImageURL})` }"
-      ></div>
+      <div :class="type"></div>
     </div>
   </div>
 </template>
@@ -20,7 +18,7 @@ const props = defineProps({
 
 .sized-div
   position: relative
-  // outline: 1px solid orange
+  outline: 1px solid orange
   aspect-ratio: 1/1
 
   .shape
@@ -33,7 +31,7 @@ const props = defineProps({
     border-radius: 0.5rem
     overflow: hidden
 
-    .content
+    .image
       position: absolute
       top: 50%
       left: 50%
@@ -43,4 +41,7 @@ const props = defineProps({
       background-position: center
       background-repeat: no-repeat
       background-size: cover
+
+    .icon
+      content: ''
 </style>
